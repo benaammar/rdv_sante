@@ -27,12 +27,11 @@ public class RendezVous {
 	private Integer duree;
 	
 	@ManyToOne
-	@JoinColumn(name = "utilisateur_id")
 	private Utilisateur medecin;
 	
 	@NotNull 
 	@OneToOne
-	private Utilisateur utilisateur;
+	private Utilisateur patient;
 	
 	
 	
@@ -71,21 +70,6 @@ public class RendezVous {
 	public void setMedecin(Utilisateur medecin) {
 		this.medecin = medecin;
 	}
-	
-	public Utilisateur getUtilisateur() {
-		return utilisateur;
-	}
-	
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
-	}
-
-	@Override
-	public String toString() {
-		return "RendezVous [id=" + id + ", date=" + date + ", duree=" + duree + ", medecin=" + medecin
-				+ ", utilisateur=" + utilisateur + "]";
-	}
-	
 	
 	
 }
